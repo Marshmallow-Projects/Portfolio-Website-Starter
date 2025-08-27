@@ -58,7 +58,7 @@ This project is built on trust. If you're contributing code related to user data
 
 ## 💬 Join the Discussion
 Have an idea or suggestion?  
-Jump into [Discussions](https://github.com/Marshmallow-Projects/AI-Portfolio-Generator/discussions) and post your thoughts.
+Jump into [Discussions](https://github.com/Marshmallow-Projects/Portfolio-Website-Starter/discussions/1) and post your thoughts OR Ideas/features [here](https://github.com/Marshmallow-Projects/Portfolio-Website-Starter/discussions/2)
 
 ## 📜 Legal & Licensing
 By contributing, you agree to our [LICENSE](https://github.com/Marshmallow-Projects/AI-Portfolio-Generator/blob/main/LICENSE) — this is a **non-commercial**, open-source project.  
