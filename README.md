@@ -57,6 +57,24 @@ Works in all modern browsers that support:
 
 You can customize the portfolio template by modifying the `createPortfolioHTML` function in `script.js` and the CSS styles in `styles.css`.
 
+
+## 👥 Contributors to RavenCo Chatting Application
+
+### 🧑‍💻 The Legend Developers
+
+| Avatar | Name            | Role                  | GitHub Profile                                    | Contributions                            |
+|--------|-----------------|-----------------------|--------------------------------------------------|-------------------------------------------|
+| ![](https://github.com/.png)     |         |      | []()           |      |
+| ![](https://github.com/.png?size=25)   |       |     | []()       |            |
+
+### 🎨 Creative Designers
+
+| Avatar | Name            | Role                   | Portfolio / GitHub                               | Contributions                              |
+|--------|-----------------|------------------------|--------------------------------------------------|---------------------------------------------|
+| ![]()   |       |          | []()       |                 |
+
+
+
 ## 📜 License
 
 This project is open source and available under the MIT License.
@@ -78,3 +96,11 @@ We specialize in:
 - Professional consultation services
 
 Let's discuss how we can help bring your digital vision to life!
+
+---
+## Marshmallow.Projects
+- Official Facebook Page - [Marshmallow Projects](https://www.facebook.com/Marshmallow.Projects)
+- Instagram Handle - [@marshmallow.projects](https://www.instagram.com/marshmallow.projects/)
+- Github - [Marshmallow-Projects](github.com/Marshmallow-Projects)
+
+![Portfolio Footer](https://github.com/user-attachments/assets/6cb0f24f-16e2-4252-9240-b854d57bf035)  
