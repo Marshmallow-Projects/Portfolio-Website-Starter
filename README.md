@@ -90,7 +90,7 @@ Interested in custom website development or business collaboration? Marshmallow.
 - 💼 Facebook: [Marshmallow Projects](https://www.facebook.com/Marshmallow.Projects)
 - 📷 Instagram: [@marshmallow.projects](https://www.instagram.com/marshmallow.projects/)
 
-We specialize in:
+**We specialize in:**
 - Custom portfolio websites
 - Web application development
 - Business website design
