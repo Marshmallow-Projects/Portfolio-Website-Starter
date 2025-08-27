@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Portfolio Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Portfolio Generator</h1>
+            <p>Create a professional portfolio website from your CV or manual input</p>
+        </header>
+
+        <div class="input-section">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="manual">Manual Input</button>
+                <button class="tab-btn" data-tab="pdf">Upload PDF</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Manual Input Form -->
+                <div id="manual-tab" class="tab-pane active">
+                    <form id="manual-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Professional Title</label>
+                            <input type="text" id="title" name="title" placeholder="e.g., Software Developer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="summary">Professional Summary</label>
+                            <textarea id="summary" name="summary" rows="4" placeholder="Brief description of your professional background..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills">Skills (comma-separated)</label>
+                            <textarea id="skills" name="skills" rows="3" placeholder="JavaScript, React, Python, Node.js..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Experience</label>
+                            <textarea id="experience" name="experience" rows="6" placeholder="Company Name - Position (Year-Year)
+- Achievement 1
+- Achievement 2
+
+Company Name - Position (Year-Year)
+- Achievement 1"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="education">Education</label>
+                            <textarea id="education" name="education" rows="4" placeholder="University Name - Degree (Year-Year)
+University Name - Degree (Year-Year)"></textarea>
+                        </div>
+
+                        <button type="submit" class="generate-btn">Generate Portfolio</button>
+                    </form>
+                </div>
+
+                <!-- PDF Upload Form -->
+                <div id="pdf-tab" class="tab-pane">
+                    <div class="pdf-upload">
+                        <input type="file" id="pdf-file" accept=".pdf" style="display: none;">
+                        <label for="pdf-file" class="file-upload-label">
+                            <span class="upload-icon">📄</span>
+                            <span>Choose PDF File</span>
+                        </label>
+                        <div id="file-name" class="file-name"></div>
+                        <div id="extraction-status" class="extraction-status"></div>
+                        
+                        <div id="extracted-data" class="extracted-data" style="display: none;">
+                            <h3>Extracted Information</h3>
+                            <div class="extracted-form">
+                                <div class="form-group">
+                                    <label for="extracted-name">Full Name</label>
+                                    <input type="text" id="extracted-name" name="extracted-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="extracted-skills">Skills</label>
+                                    <textarea id="extracted-skills" name="extracted-skills" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="extracted-experience">Experience</label>
+                                    <textarea id="extracted-experience" name="extracted-experience" rows="6"></textarea>
+                                </div>
+                                <button type="button" class="generate-btn" id="generate-from-pdf">Generate Portfolio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="preview-section" class="preview-section" style="display: none;">
+            <h2>Portfolio Preview</h2>
+            <div id="portfolio-preview" class="portfolio-preview"></div>
+            <div class="action-buttons">
+                <button id="download-btn" class="download-btn">Download Portfolio</button>
+                <button id="regenerate-btn" class="regenerate-btn">Regenerate</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
