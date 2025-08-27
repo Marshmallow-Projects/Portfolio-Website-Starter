@@ -58,7 +58,7 @@ Works in all modern browsers that support:
 You can customize the portfolio template by modifying the `createPortfolioHTML` function in `script.js` and the CSS styles in `styles.css`.
 
 
-## 👥 Contributors to RavenCo Chatting Application
+## 👥 Contributors to The Ai Portfolio Generator
 
 ### 🧑‍💻 The Legend Developers
 
