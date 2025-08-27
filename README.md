@@ -85,7 +85,7 @@ Interested in custom website development or business collaboration? Marshmallow.
 
 **For business inquiries, custom website development**
 
-- 📧 Email: [business@marshmallowprojects.com](mailto:admin@marshmallowprojects.com)
+- 📧 Email: [admin@marshmallowprojects.com](mailto:admin@marshmallowprojects.com)
 - 🌐 Website: [marshmallowprojects.com](https://marshmallowprojects.com)
 - 💼 Facebook: [Marshmallow Projects](https://www.facebook.com/Marshmallow.Projects)
 - 📷 Instagram: [@marshmallow.projects](https://www.instagram.com/marshmallow.projects/)
