@@ -175,20 +175,20 @@ function createPortfolioHTML(data) {
     return `
         <div class="portfolio">
             <header class="portfolio-header">
-                <h1>${data.name || 'Your Name'}</h1>
+                <h1><i class="fas fa-user"></i> ${data.name || 'Your Name'}</h1>
                 <div class="title">${data.title || 'Professional Title'}</div>
                 ${data.email || data.phone || data.location ? `
                 <div class="portfolio-contact">
-                    ${data.email ? `${data.email} • ` : ''}
-                    ${data.phone ? `${data.phone} • ` : ''}
-                    ${data.location || ''}
+                    ${data.email ? `<i class="fas fa-envelope"></i> ${data.email} • ` : ''}
+                    ${data.phone ? `<i class="fas fa-phone"></i> ${data.phone} • ` : ''}
+                    ${data.location ? `<i class="fas fa-map-marker-alt"></i> ${data.location}` : ''}
                 </div>
                 ` : ''}
             </header>
 
             ${data.summary ? `
             <section class="portfolio-section">
-                <h2>Professional Summary</h2>
+                <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
                 <div class="portfolio-summary">
                     ${data.summary}
                 </div>
@@ -197,10 +197,10 @@ function createPortfolioHTML(data) {
 
             ${data.skills ? `
             <section class="portfolio-section">
-                <h2>Skills</h2>
+                <h2><i class="fas fa-code"></i> Skills</h2>
                 <div class="skills-grid">
                     ${data.skills.split(',').map(skill => `
-                        <div class="skill-item">${skill.trim()}</div>
+                        <div class="skill-item"><i class="fas fa-star"></i> ${skill.trim()}</div>
                     `).join('')}
                 </div>
             </section>
@@ -208,10 +208,10 @@ function createPortfolioHTML(data) {
 
             ${data.experience ? `
             <section class="portfolio-section">
-                <h2>Experience</h2>
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
                 ${parseExperience(data.experience).map(exp => `
                     <div class="experience-item">
-                        <h3>${exp.position}</h3>
+                        <h3><i class="fas fa-briefcase"></i> ${exp.position}</h3>
                         ${exp.period ? `<div class="period">${exp.period}</div>` : ''}
                         ${exp.achievements ? `
                         <ul>
@@ -227,10 +227,10 @@ function createPortfolioHTML(data) {
 
             ${data.education ? `
             <section class="portfolio-section">
-                <h2>Education</h2>
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
                 ${parseEducation(data.education).map(edu => `
                     <div class="education-item">
-                        <h3>${edu.institution}</h3>
+                        <h3><i class="fas fa-graduation-cap"></i> ${edu.institution}</h3>
                         <div class="period">${edu.degree} ${edu.period ? `• ${edu.period}` : ''}</div>
                     </div>
                 `).join('')}
@@ -297,17 +297,42 @@ function parseEducation(educationText) {
 }
 
 // Download portfolio as HTML file
-function downloadPortfolio() {
+async function downloadPortfolio() {
+    if (!portfolioPreview.innerHTML.trim()) {
+        alert('Please generate a portfolio first before downloading.');
+        return;
+    }
+
     const portfolioHTML = portfolioPreview.innerHTML;
+
+    // Fetch the CSS content
+    let cssContent = '';
+    try {
+        const response = await fetch('./Assets/CSS/Design.css');
+        cssContent = await response.text();
+    } catch (error) {
+        console.error('Error fetching CSS:', error);
+        // Fallback to basic styles if CSS fetch fails
+        cssContent = `
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .portfolio { max-width: 800px; margin: 0 auto; }
+            .portfolio-header { text-align: center; padding: 20px; background: #f0f0f0; margin-bottom: 20px; }
+            .portfolio-section { margin-bottom: 20px; }
+            .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+            .skill-item { background: #e0e0e0; padding: 10px; border-radius: 5px; }
+            .experience-item, .education-item { margin-bottom: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        `;
+    }
+
     const fullHTML = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Portfolio - ${document.getElementById('name').value || 'My Portfolio'}</title>
+            <title>Portfolio - ${document.getElementById('name')?.value || document.getElementById('extracted-name')?.value || 'My Portfolio'}</title>
             <style>
-                ${document.querySelector('style').textContent}
+                ${cssContent}
             </style>
         </head>
         <body>
