@@ -408,27 +408,68 @@ header p {
     flex-wrap: wrap;
 }
 
-.footer-links a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.footer-links a:hover {
-    color: #3498db;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
 
 .footer-tagline {
     font-size: 1.1rem;
     opacity: 0.9;
     margin-top: 15px;
     font-style: italic;
+}
+
+/* Social Media Pills */
+.social-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 8px 12px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    min-width: 50px;
+    height: 40px;
+    gap: 0;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+    flex-shrink: 0;
+    transform: scale(1);
+}
+
+.social-text {
+    opacity: 0;
+    max-width: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    white-space: nowrap;
+    font-weight: 500;
+    overflow: hidden;
+    margin-left: 0;
+}
+
+.social-pill:hover {
+    color: #3498db;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    min-width: 120px;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.social-pill:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.social-pill:hover .social-text {
+    opacity: 1;
+    max-width: 100px;
+    margin-left: 0;
 }
 
 /* Responsive footer */
@@ -445,5 +486,14 @@ header p {
     
     .footer-logo {
         font-size: 1.5rem;
+    }
+    
+    .social-pill {
+        min-width: 120px;
+        height: 35px;
+    }
+    
+    .social-text {
+        font-size: 0.9rem;
     }
 }
